@@ -1,13 +1,13 @@
-import {useCallback, useEffect} from 'react';
+import { useCallback, useEffect } from 'react';
 import * as domEvents from '../constants/domEvents';
 import debugLog from '../libs/log';
-import {useConfigs} from '../hooks/configs';
-import {closeApp, isTVBrowser, reload} from '../libs/utils';
+import { useConfigs } from '../hooks/configs';
+import { closeApp, isTVBrowser, reload } from '../libs/utils';
 
 const useVisibleChangeHandler = () =>
 	useCallback(() => {
-		const {hidden} = document;
-		debugLog('VISIBILITY_CHANGE', {hidden});
+		const { hidden } = document;
+		debugLog('VISIBILITY_CHANGE', { hidden });
 	}, []);
 
 const useLocaleChangeHandler = () =>
@@ -27,6 +27,7 @@ const useHighContrastChangeHandler = setSkinVariants =>
 export const useBackHandler = () =>
 	useCallback(() => {
 		debugLog('BACK[I]', {});
+		closeApp();
 	}, []);
 
 export const useCloseHandler = () =>
