@@ -3,6 +3,7 @@ import {Header, Panel} from '@enact/sandstone/Panels';
 import $L from '@enact/i18n/$L';
 import Home from './Home2';
 import Video from './Video';
+import HomeScreen from '../views/HomeScreen'
 import Account from './Account';
 import HLSVideo from './HLSVideo';
 import css from './Main.module.less';
@@ -13,7 +14,7 @@ const Main = (props) => {
 			<Header className={css.header} title={$L('Enact Template')} />
 			<TabLayout orientation='vertical'>
 				<Tab title={$L('Home')}>
-					<Home />
+					<HomeScreen />
 				</Tab>
 				<Tab title={$L('Video Player')}>
 					<Video src="http://media.w3.org/2010/05/sintel/trailer.mp4" />
