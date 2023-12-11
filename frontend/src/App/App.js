@@ -43,6 +43,7 @@ const App = (props) => {
 	const handleClose = useCloseHandler();
 	useDocumentEvent(setSkinVariants);
 	const user = useSelector((state) => { return state.user });
+	console.log(user);
 	if (user.userId === -1) {
 		return (
 			<Panels {...props} skinVariants={skinVariants}>
@@ -57,7 +58,7 @@ const App = (props) => {
 			onBack={handleBack}
 			onClose={handleClose}
 		>
-			<Main />
+			<Main userId={user.userId} />
 		</Panels>
 	);
 };
