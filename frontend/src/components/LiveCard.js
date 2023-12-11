@@ -5,20 +5,20 @@ import ImageItem from '@enact/sandstone/ImageItem';
 import {changePath} from '../store/store';
 import { useDispatch} from 'react-redux';
 
-const LiveCard = ({ thumbnail }) => {
+const LiveCard = ({ liveInfo }) => {
   // thumbnail이 없는 경우를 처리
   let dispatch = useDispatch();
 
-  const { id: id, title: title, thumbnail: thumbnailUrl } = thumbnail;
+  const { id: id, title: title, liveCard: liveCardUrl } = liveInfo;
 
   const goLive = useCallback(()=>{
-    dispatch(changePath(thumbnail.id));
+    dispatch(changePath(liveInfo.id));
   }, []);
 
   return (
     <div style={{ marginRight: '30px' }} onClick={goLive}>
       <ImageItem
-        src={thumbnailUrl}
+        src={liveCardUrl}
         label={title}
         alt={title}
         style={{ width: '10.8rem', height: '19.2rem' }}
@@ -28,9 +28,9 @@ const LiveCard = ({ thumbnail }) => {
 };
 
 LiveCard.propTypes = {
-  thumbnail: PropTypes.shape({
+  liveInfo: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    thumbnail: PropTypes.string.isRequired,
+    liveCard: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired
   }),
 };

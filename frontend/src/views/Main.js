@@ -10,6 +10,7 @@ import {useCallback, useMemo} from 'react';
 import {useDispatch} from 'react-redux';
 import {changePath} from '../store/store';
 import HomeScreen from './HomeScreen';
+import LikedVideos from './LikedVideos'
 import Live from './Live';
 
 const Main = (props) => {
@@ -24,13 +25,13 @@ const Main = (props) => {
 	console.log("liveId",path.liveId);
 	const mainScreen = useMemo(() => (
 		<Panel {...props}>
-			<Header className={css.header} title={$L('Enact Template')} />
+			<Header className={css.header} title={$L('LGEE')} />
 			<TabLayout orientation='vertical' collapsed={true}>
 				<Tab title={$L('Home')} icon="home">
 					<HomeScreen />
 				</Tab>
-				<Tab title={$L('Video Player')} icon="home">
-					<Video src="http://media.w3.org/2010/05/sintel/trailer.mp4" />
+				<Tab title={$L('Liked Videos')} icon="heart">
+					<LikedVideos />
 				</Tab>
 				<Tab title={$L('HLS Video Player')} icon="home">
 					{/* <HLSVideo src="https://cdn-vos-ppp-01.vos360.video/Content/HLS_HLSCLEAR/Live/channel(PPP-LL-2HLS)/index.m3u8" /> */}

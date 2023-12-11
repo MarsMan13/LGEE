@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/hooks/configs.js</title>
+    <title>Code coverage report for src/components/LiveCard.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/hooks</a> configs.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/components</a> LiveCard.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.66% </span>
+                <span class="strong">28.57% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/15</span>
+                <span class='fraction'>2/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.66% </span>
+                <span class="strong">28.57% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/15</span>
+                <span class='fraction'>2/7</span>
             </div>
         
             
@@ -107,18 +107,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -129,54 +123,60 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// This is subscribe APIs.
-import {useEffect, useRef, useState} from 'react';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// components/LiveCard.js
+import React, { useCallback } from 'react';
+import PropTypes from 'prop-types';
+import ImageItem from '@enact/sandstone/ImageItem';
+import {changePath} from '../store/store';
+import { useDispatch} from 'react-redux';
 &nbsp;
-import debugLog from '../libs/log';
-import {getSystemInfo} from '../libs/services';
+const LiveCard = <span class="fstat-no" title="function not covered" >({</span> liveInfo }) =&gt; {
+  // thumbnail이 없는 경우를 처리
+  let dispatch = <span class="cstat-no" title="statement not covered" >useDispatch();</span>
 &nbsp;
-export const useConfigs = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-	const ref = <span class="cstat-no" title="statement not covered" >useRef(null);</span>
-	const [value, setValue] = <span class="cstat-no" title="statement not covered" >useState({returnValue: false});</span>
+  const { id: id, title: title, liveCard: liveCardUrl } = <span class="cstat-no" title="statement not covered" >liveInfo;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >		if (!ref.current) {</span>
-<span class="cstat-no" title="statement not covered" >			debugLog('GET_CONFIGS[R]', {});</span>
-<span class="cstat-no" title="statement not covered" >			ref.current = getSystemInfo({</span>
-				parameters: {
-					subscribe: true,
-					keys: ['modelName', 'firmwareVersion', 'UHD', 'sdkVersion']
-				},
-				onSuccess: <span class="fstat-no" title="function not covered" >re</span>s =&gt; {
-<span class="cstat-no" title="statement not covered" >					debugLog('GET_CONFIGS[S]', res);</span>
-<span class="cstat-no" title="statement not covered" >					setValue(res);</span>
-				},
-				onFailure: <span class="fstat-no" title="function not covered" >er</span>r =&gt; {
-<span class="cstat-no" title="statement not covered" >					debugLog('GET_CONFIGS[F]', err);</span>
-				}
-			});
-		}
+  const goLive = <span class="cstat-no" title="statement not covered" >useCallback(<span class="fstat-no" title="function not covered" >()</span>=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >    dispatch(changePath(liveInfo.id));</span>
+  }, []);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		return <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >			if (ref.current) {</span>
-<span class="cstat-no" title="statement not covered" >				ref.current.cancel();</span>
-<span class="cstat-no" title="statement not covered" >				ref.current = null;</span>
-			}
-		};
-	}, []);
-&nbsp;
-<span class="cstat-no" title="statement not covered" >	return value;</span>
+<span class="cstat-no" title="statement not covered" >  return (</span>
+    &lt;div style={{ marginRight: '30px' }} onClick={goLive}&gt;
+      &lt;ImageItem
+        src={liveCardUrl}
+        label={title}
+        alt={title}
+        style={{ width: '10.8rem', height: '19.2rem' }}
+      /&gt;
+    &lt;/div&gt;
+  );
 };
+&nbsp;
+LiveCard.propTypes = {
+  liveInfo: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    liveCard: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired
+  }),
+};
+&nbsp;
+export default LiveCard;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
