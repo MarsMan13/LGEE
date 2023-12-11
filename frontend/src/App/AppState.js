@@ -3,6 +3,8 @@ import * as domEvents from '../constants/domEvents';
 import debugLog from '../libs/log';
 import { useConfigs } from '../hooks/configs';
 import { closeApp, isTVBrowser, reload } from '../libs/utils';
+import { useDispatch} from 'react-redux';
+import { toggleKeyboard } from '../store/store';
 
 const useVisibleChangeHandler = () =>
 	useCallback(() => {
@@ -27,7 +29,6 @@ const useHighContrastChangeHandler = setSkinVariants =>
 export const useBackHandler = () =>
 	useCallback(() => {
 		debugLog('BACK[I]', {});
-		closeApp();
 	}, []);
 
 export const useCloseHandler = () =>
@@ -36,18 +37,29 @@ export const useCloseHandler = () =>
 		closeApp();
 	}, []);
 
+export const useKeyboardHandler = () => {
+
+  let dispatch = useDispatch();
+	return useCallback(() => {
+		debugLog('KEYBOARD[I]', {});
+		dispatch(toggleKeyboard());
+	}, []);
+}
+
 // Add all document events here
 export const useDocumentEvent = setSkinVariants => {
 	const handleVisibilitychange = useVisibleChangeHandler();
 	const handleHighContrastChange =
 		useHighContrastChangeHandler(setSkinVariants);
 	const handleLocaleChange = useLocaleChangeHandler();
+	const handleKeyboardChange = useKeyboardHandler();
 
 	useEffect(() => {
 		const events = {
 			[domEvents.VISIBILITY_CHANGE]: handleVisibilitychange,
 			[domEvents.WEBOS_HIHG_CONTRAST_CHANGE]: handleHighContrastChange,
-			[domEvents.WEBOS_LOCALE_CHANGE]: handleLocaleChange
+			[domEvents.WEBOS_LOCALE_CHANGE]: handleLocaleChange,
+			[domEvents.VIRTUAL_KEYBOARD_CHANGE]: handleKeyboardChange,
 		};
 
 		if (isTVBrowser()) {

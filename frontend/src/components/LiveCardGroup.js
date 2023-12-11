@@ -20,7 +20,9 @@ import thumbnails from './tumbnails.json'
 //   );
 // };
 
-const LiveCardGroup = () => {
+const LiveCardGroup = (props) => {
+  const categoryId = props.id;
+  
   const renderItem = (index, ...reset) => {
     // console.log(thumbnails[index.index])
     return (

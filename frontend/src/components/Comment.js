@@ -1,15 +1,18 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { customAxios } from "../libs/axios";
 import { globalInfos} from "../constants/globalInfos";
 import Button from '@enact/sandstone/Button';
 import { InputField } from "@enact/sandstone/Input";
 import {useState} from 'react';
+import { ThemeDecorator } from '@enact/sandstone/ThemeDecorator';
+import { useSelector } from 'react-redux';
 
 const CommentWidget = (props) => {
   const liveId = props.liveId;
 
   let [comments, setComments] = useState([]);
-
+  const keyboardState = useSelector((state) => { return state.keyboard });
+  console.log("keyboardState: ", keyboardState);
   useEffect(()=>{
     // const res = customAxios.get(`/live/${liveId}/comments/0`);
     const res = [
@@ -19,7 +22,7 @@ const CommentWidget = (props) => {
     setComments(res);
   }, []);
 
-  const onCommentSubmit = (comment) => {
+  const onCommentSubmit =useCallback((comment)=>{
     const newComment = {
       userId: globalInfos.getInstance().userId,
       userName: globalInfos.getInstance().userId,
@@ -27,14 +30,17 @@ const CommentWidget = (props) => {
     };
     const res = customAxios.post(`/live/${liveId}/comments`, newComment);
     setComments([newComment, ...comments]);
-  };
 
-  const getComments = (page) => {
+  }, [liveId]);
+
+  const getComments = useCallback((page)=>{
     const res = customAxios.get(`/live/${liveId}/comments/${page}`);
     setComments([...comments, ...res]);
-  }
+  }, [liveId]);
+ 
+  const flexDirection = (keyboardState.event === 0) ? "column" : "column-reverse";
   return (
-    <div>
+    <div style={{height: "100%", display: "flex", flexDirection: flexDirection, justifyContent: "flex-end"}}>
       <CommentList comments={comments} getComments={getComments} liveId={liveId}/>
       <CommentForm onCommentSubmit={onCommentSubmit}/>
     </div>  
@@ -90,4 +96,4 @@ const CommentForm = (props) => {
   );
 };
 
-export default CommentWidget;
+export default ThemeDecorator(CommentWidget);
