@@ -1,17 +1,17 @@
 // components/LiveCardGroup.js
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Scroller from '@enact/sandstone/Scroller';
 import LiveCard from './LiveCard';
 import VirtualList, { VirtualGridList } from '@enact/sandstone/VirtualList';
 
-import thumbnails from './tumbnails.json'
+import liveCards from './livecards.json'
 
 // const LiveCardGroup = () => {
 //   return (
 //     <div className='thumbnail-list-container'>
 //     <Scroller direction='horizontal' horizontalScrollbar="auto" noScrollByWheel={true}>
 //       <div style={{ display: 'flex' }}>
-//         {thumbnails.map((thumbnail, index) => (
+//         {liveCards.map((thumbnail, index) => (
 //           <LiveCard key={index} thumbnail={thumbnail} />
 //         ))}
 //       </div>
@@ -22,39 +22,51 @@ import thumbnails from './tumbnails.json'
 
 const LiveCardGroup = (props) => {
   const categoryId = props.id;
+  const direction = props.direction
+  const scrollHeight = props.scrollHeight
+  const denyWheelScroll = props.denyWheelScroll
+  const dataSize = (props.dataSize == -1) ? liveCards.length : props.dataSize
+  const listRef = useRef(null);
+  console.log(direction, scrollHeight, dataSize)
+  
+  useEffect(() => {
+    // 화면에 보이는 썸네일이 자동으로 화면에 스크롤되도록
+    if (listRef.current) {
+        console.log("Raccoon")
+      const focusedItemIndex = liveCards.findIndex((item) => item.focused);
+      if (focusedItemIndex !== -1) {
+        listRef.current.scrollToItem(focusedItemIndex, 'start');
+      }
+    }
+  }, [liveCards]);
   
   const renderItem = (index, ...reset) => {
-    // console.log(thumbnails[index.index])
+    // console.log(liveCards[index.index])
     return (
       <div style={{ display: 'flex' }}>
-        <LiveCard key={index.index} thumbnail={thumbnails[index.index]} />
+        <LiveCard key={index.index} liveInfo={liveCards[index.index]} />
       </div>
       );
   }
   return (
-    <div className='thumbnail-list-container'>
+    <div className='livecards-container'>
       <VirtualGridList
         itemSize={{minWidth: 450, minHeight: 800}}
-        dataSize={thumbnails.length}
+        dataSize={dataSize}
         itemRenderer={renderItem}
         key="native"
         direction='horizontal'
-        scrollMode='translate'
         horizontalScrollbar="visible"
-        noScrollByWheel={true}
-        // data={thumbnails}
+        verticalScrollbar='hidden'
+        noScrollByWheel={denyWheelScroll}
+        // data={liveCards}
         hoverToScroll={true}
-        spacing={10}
-        // scrollMode='translate'
+        spacing={0}
+        scrollMode='native'
         // noAffordance={true}
-        style={{ height: '20rem' }} // Scroller의 높이
+        style={{ height: scrollHeight }} // Scroller의 높이
+        // ref={listRef}
         />
-        {/* <div style={{ display: 'flex' }}>
-          {thumbnails.map((thumbnail, index) => (
-            <LiveCard key={index} thumbnail={thumbnail} />
-          ))}
-        </div>
-      </VirtualList> */}
     </div>
   );
 };

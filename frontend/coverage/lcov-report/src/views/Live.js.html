@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">14.28% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>1/7</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">14.28% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>1/7</span>
             </div>
         
             
@@ -102,27 +102,7 @@
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
 <a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a>
-<a name='L42'></a><a href='#L42'>42</a>
-<a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -131,6 +111,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -138,33 +119,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -184,59 +144,39 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Panels, Panel, Header, Title } from '@enact/sandstone/Panels';
 import { ThemeDecorator } from '@enact/sandstone/ThemeDecorator';
 import css from './Live.module.less';
-import ProductList from '../components/ProductList';
-import Video from '../components/Video';
-import Chat from '../components/Chat';
-import VideoPlayer from '@enact/sandstone/VideoPlayer';
+import CommentWidget from '../components/Comment';
+import { useEffect } from 'react';
+import {changePath} from '../store/store';
+import { useDispatch} from 'react-redux';
 &nbsp;
 &nbsp;
-const Live = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(p</span>rops) =&gt; {</span>
+const Live = <span class="fstat-no" title="function not covered" >({</span>id, onBack, onClose, ...rest}) =&gt; {
+  let dispatch = <span class="cstat-no" title="statement not covered" >useDispatch();</span>
   const products = <span class="cstat-no" title="statement not covered" >[</span>
     { id: 1, name: "퍼슈즈", price: '12000', image: 'https://static-resource.mlb-korea.com/cdn-cgi/image/format=auto,width=828,height=828,quality=85/images/goods/thnail/m/20230913/3AMUPSF36-50CAD-110612674613891910.png' },
     { id: 2, name: "퍼슈즈", price: '12000', image: 'https://static-resource.mlb-korea.com/cdn-cgi/image/format=auto,width=828,height=828,quality=85/images/goods/thnail/m/20230913/3AMUPSF36-50CAD-110612674613891910.png' },
   ];
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >()</span>=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >()</span>=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >      dispatch(changePath(-1));</span>
+    }
+  }, []);
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;div className={css.videoContainer}&gt;
       &lt;video autoPlay muted loop&gt;
         &lt;source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" /&gt;
       &lt;/video&gt;
-      &lt;Panels className={css.panels} style={{ position: 'absolute', background: 'transparent'}}&gt;
-        &lt;Panel {...props} style={{ height: "100%" }}&gt;
+      &lt;Panels onBack={onBack} onClose={onClose} className={css.panels} style={{ position: 'absolute', background: 'transparent'}}&gt;
+        &lt;Panel {...rest} style={{ height: "100%" }}&gt;
           &lt;Header title="[슈펜] 겨울 필수템 퍼슈즈/패딩화/롱부츠 특가전" subtitle="LIVE: 86,103" /&gt;
           &lt;div&gt;
-            &lt;Chat&gt;&lt;/Chat&gt;
+            &lt;CommentWidget liveId={id}&gt;&lt;/CommentWidget&gt;
           &lt;/div&gt;
         &lt;/Panel&gt;
       &lt;/Panels&gt;
     &lt;/div&gt;
-  );
-&nbsp;
-&nbsp;
-<span class="cstat-no" title="statement not covered" >  return &lt;div&gt;</span>
-    &lt;VideoPlayer style={{ position: 'relative', width: '100%' }}&gt;
-      &lt;source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" /&gt;
-      &lt;Chat&gt;&lt;/Chat&gt;
-    &lt;/VideoPlayer&gt;
-  &lt;/div&gt;;
-&nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;Panels style={{ height: "100%", }}&gt;
-      &lt;Panel {...props} style={{ height: "100%" }}&gt;
-        &lt;Header title="[슈펜] 겨울 필수템 퍼슈즈/패딩화/롱부츠 특가전" subtitle="LIVE: 86,103" /&gt;
-        &lt;div style={{ display: 'flex' }}&gt;
-          &lt;div style={{ flex: 1 }}&gt;
-            &lt;ProductList products={products}&gt;&lt;/ProductList&gt;
-          &lt;/div&gt;
-          &lt;div style={{ flex: 1 }}&gt;
-            &lt;Video&gt;&lt;/Video&gt;
-          &lt;/div&gt;
-          &lt;div style={{ flex: 1 }}&gt;
-            &lt;Chat&gt;&lt;/Chat&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/Panel&gt;
-    &lt;/Panels&gt;
   );
 };
 &nbsp;
@@ -247,7 +187,7 @@ export default ThemeDecorator(Live);</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-11T14:15:37.264Z
+                at 2023-12-11T22:40:46.016Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

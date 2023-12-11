@@ -11,13 +11,13 @@ const HomeScreen = () => {
         <Scroller className={css.home} verticalScrollbar='visible'>
             <div style={{cardGroupStyle}}>
                 <h3>{$L("추천 컨텐츠")}</h3>
-                <LiveCardGroup id={1}/>
+                <LiveCardGroup id={1} direction='horizontal' scrollHeight='20rem' denyWheelScroll={true} dataSize={-1}/>
                 <h3>{$L("핫딜")}</h3>
-                <LiveCardGroup id={2}/>
+                <LiveCardGroup id={2} direction='horizontal' scrollHeight='20rem' denyWheelScroll={true} dataSize={-1}/>
                 <h3>{$L("실시간 인기 라이브")}</h3>
-                <LiveCardGroup id={3}/>
+                <LiveCardGroup id={3} direction='horizontal' scrollHeight='20rem' denyWheelScroll={true} dataSize={-1}/>
                 <h3>{$L("실시간 라이브")}</h3>
-                <LiveCardGroup id={4}/>
+                <LiveCardGroup id={4} direction='vertical' scrollHeight='60rem' denyWheelScroll={false} dataSize={-1}/>
             </div>
         </Scroller>
     );

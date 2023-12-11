@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/hooks/configs.js</title>
+    <title>Code coverage report for src/views/LikedVideos.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/hooks</a> configs.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/views</a> LikedVideos.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.66% </span>
+                <span class="strong">16.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/15</span>
+                <span class='fraction'>1/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.66% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/15</span>
+                <span class='fraction'>1/5</span>
             </div>
         
             
@@ -101,7 +101,14 @@
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -109,10 +116,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -121,62 +125,73 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// This is subscribe APIs.
-import {useEffect, useRef, useState} from 'react';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState } from 'react';
+import VirtualList, { VirtualGridList } from '@enact/sandstone/VirtualList';
+import { useSelector } from "react-redux";
+import $L from '@enact/i18n/$L';
+import LiveCard from '../components/LiveCard';
 &nbsp;
-import debugLog from '../libs/log';
-import {getSystemInfo} from '../libs/services';
+import liveCards from '../components/livecards.json'
 &nbsp;
-export const useConfigs = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-	const ref = <span class="cstat-no" title="statement not covered" >useRef(null);</span>
-	const [value, setValue] = <span class="cstat-no" title="statement not covered" >useState({returnValue: false});</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >	useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >		if (!ref.current) {</span>
-<span class="cstat-no" title="statement not covered" >			debugLog('GET_CONFIGS[R]', {});</span>
-<span class="cstat-no" title="statement not covered" >			ref.current = getSystemInfo({</span>
-				parameters: {
-					subscribe: true,
-					keys: ['modelName', 'firmwareVersion', 'UHD', 'sdkVersion']
-				},
-				onSuccess: <span class="fstat-no" title="function not covered" >re</span>s =&gt; {
-<span class="cstat-no" title="statement not covered" >					debugLog('GET_CONFIGS[S]', res);</span>
-<span class="cstat-no" title="statement not covered" >					setValue(res);</span>
-				},
-				onFailure: <span class="fstat-no" title="function not covered" >er</span>r =&gt; {
-<span class="cstat-no" title="statement not covered" >					debugLog('GET_CONFIGS[F]', err);</span>
-				}
-			});
-		}
-&nbsp;
-<span class="cstat-no" title="statement not covered" >		return <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >			if (ref.current) {</span>
-<span class="cstat-no" title="statement not covered" >				ref.current.cancel();</span>
-<span class="cstat-no" title="statement not covered" >				ref.current = null;</span>
-			}
-		};
-	}, []);
-&nbsp;
-<span class="cstat-no" title="statement not covered" >	return value;</span>
+const LikedVideos = <span class="fstat-no" title="function not covered" >(p</span>rops) =&gt; {
+  const user = <span class="cstat-no" title="statement not covered" >useSelector(<span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; { <span class="cstat-no" title="statement not covered" >return state.user </span>});</span>
+  
+  const renderItem = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(i</span>ndex, ...reset) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+      &lt;div style={{ display: 'flex' }}&gt;
+        &lt;LiveCard key={index.index} liveInfo={liveCards[index.index]} /&gt;
+      &lt;/div&gt;
+      );
+  }
+<span class="cstat-no" title="statement not covered" >  return (</span>
+    &lt;&gt;
+    &lt;h3&gt;{$L("좋아요 표시한 동영상")}&lt;/h3&gt;
+    &lt;div className='livecards-container'&gt;
+      &lt;VirtualGridList
+        itemSize={{minWidth: 450, minHeight: 800}}
+        dataSize={liveCards.length}
+        itemRenderer={renderItem}
+        key="native"
+        // direction='horizontal'
+        horizontalScrollbar="visible"
+        // verticalScrollbar="hidden"
+        // noScrollByWheel={true}
+        // data={liveCards}
+        hoverToScroll={true}
+        spacing={0}
+        // scrollMode='translate'
+        style={{ height: '80vh' }} // Scroller의 높이
+        /&gt;
+    &lt;/div&gt;
+    &lt;/&gt;
+  );
 };
+&nbsp;
+export default LikedVideos;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
