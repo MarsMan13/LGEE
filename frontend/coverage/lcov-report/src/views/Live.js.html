@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/8</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/8</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
@@ -122,15 +122,7 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -139,12 +131,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -152,8 +138,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -197,22 +181,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Panels, Panel, Header, } from '@enact/sandstone/Panels';
-import WizardPanels from '@enact/sandstone/WizardPanels';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Panels, Panel, Header, Title } from '@enact/sandstone/Panels';
 import { ThemeDecorator } from '@enact/sandstone/ThemeDecorator';
 import css from './Live.module.less';
 import ProductList from '../components/ProductList';
 import Video from '../components/Video';
-import CommentWidget from '../components/Comment';
+import Chat from '../components/Chat';
 import VideoPlayer from '@enact/sandstone/VideoPlayer';
-import { useSearchParams } from 'react-router-dom';
 &nbsp;
 &nbsp;
-const Live = <span class="fstat-no" title="function not covered" >(p</span>rops) =&gt; {
-&nbsp;
-  const [searchParams] = <span class="cstat-no" title="statement not covered" >useSearchParams();</span>
-  const queryList = <span class="cstat-no" title="statement not covered" >[...searchParams];</span>
-<span class="cstat-no" title="statement not covered" >  console.log(queryList);</span>
+const Live = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(p</span>rops) =&gt; {</span>
   const products = <span class="cstat-no" title="statement not covered" >[</span>
     { id: 1, name: "퍼슈즈", price: '12000', image: 'https://static-resource.mlb-korea.com/cdn-cgi/image/format=auto,width=828,height=828,quality=85/images/goods/thnail/m/20230913/3AMUPSF36-50CAD-110612674613891910.png' },
     { id: 2, name: "퍼슈즈", price: '12000', image: 'https://static-resource.mlb-korea.com/cdn-cgi/image/format=auto,width=828,height=828,quality=85/images/goods/thnail/m/20230913/3AMUPSF36-50CAD-110612674613891910.png' },
@@ -220,19 +198,17 @@ const Live = <span class="fstat-no" title="function not covered" >(p</span>rops)
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;div className={css.videoContainer}&gt;
-      &lt;WizardPanels className={css.panels} style={{ position: 'absolute', background: 'transparent' }}
-        prevButtonVisibility='always' nextButtonVisibility='always'
-      &gt;
+      &lt;video autoPlay muted loop&gt;
+        &lt;source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" /&gt;
+      &lt;/video&gt;
+      &lt;Panels className={css.panels} style={{ position: 'absolute', background: 'transparent'}}&gt;
         &lt;Panel {...props} style={{ height: "100%" }}&gt;
           &lt;Header title="[슈펜] 겨울 필수템 퍼슈즈/패딩화/롱부츠 특가전" subtitle="LIVE: 86,103" /&gt;
-          &lt;div style={{
-            height: "100%", width: "100%", display: "flex", flexDirection: "column",
-            justifyContent: "flex-end",
-          }}&gt;
-            &lt;CommentWidget&gt;&lt;/CommentWidget&gt;
+          &lt;div&gt;
+            &lt;Chat&gt;&lt;/Chat&gt;
           &lt;/div&gt;
         &lt;/Panel&gt;
-      &lt;/WizardPanels&gt;
+      &lt;/Panels&gt;
     &lt;/div&gt;
   );
 &nbsp;
@@ -240,7 +216,7 @@ const Live = <span class="fstat-no" title="function not covered" >(p</span>rops)
 <span class="cstat-no" title="statement not covered" >  return &lt;div&gt;</span>
     &lt;VideoPlayer style={{ position: 'relative', width: '100%' }}&gt;
       &lt;source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" /&gt;
-      &lt;CommentWidget&gt;&lt;/CommentWidget&gt;
+      &lt;Chat&gt;&lt;/Chat&gt;
     &lt;/VideoPlayer&gt;
   &lt;/div&gt;;
 &nbsp;
@@ -256,7 +232,7 @@ const Live = <span class="fstat-no" title="function not covered" >(p</span>rops)
             &lt;Video&gt;&lt;/Video&gt;
           &lt;/div&gt;
           &lt;div style={{ flex: 1 }}&gt;
-            &lt;CommentWidget&gt;&lt;/CommentWidget&gt;
+            &lt;Chat&gt;&lt;/Chat&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/Panel&gt;
@@ -271,7 +247,7 @@ export default ThemeDecorator(Live);</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-10T12:49:59.710Z
+                at 2023-12-11T14:15:37.264Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
