@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import $L from '@enact/i18n/$L';
 import Icon from '@enact/sandstone/Icon';
-import {changeUser} from '../store/store';
+import { changeUser } from '../store/store';
 import { useDispatch, useSelector } from 'react-redux';
 import spotlight from '@enact/spotlight';
 
@@ -56,30 +56,13 @@ const Account = () => {
 	useEffect(() => {
 		fetchUser();
 	}, []);
-	useEffect(()=>{
+	useEffect(() => {
 		console.log("check");
 		spotlight.focus(".userButton:first-of-type");
 	});
 	return (
-		<div style={{display: "flex", flexDirection:"column", height: "100%",}}>
-			{Array.isArray(state.users) ? (
-				<div style={{ display: "flex", justifyContent: "center", flexGrow:1, alignItems: "center" }}>
-					{state.users.map((user, index) => (
-						<div key={user.userId} style={{ display: "flex", flexDirection: "column" }}>
-							<Button style={{ height: "10rem", width: "10rem" }} onClick={() => dispatch(changeUser(user))}>
-								{user.userName}
-							</Button>
-							<Button backgroundOpacity="transparent" size="small" onClick={() => {}}>
-								<Icon size="small" title="closex">closex</Icon>
-							</Button>
-						</div>
-					))}
-				</div>
-			) : (
-				<p>{$L('Cannot retreive data!')}</p>
-			)}
-			
-			<div style={{display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0, paddingBottom: "1rem"}}>
+		<div style={{ display: "flex", flexDirection: "column", height: "100%", }}>
+			<div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0, paddingBottom: "1rem" }}>
 				<h2>Add User</h2>
 				<div>
 					<InputField
@@ -99,6 +82,23 @@ const Account = () => {
 					</Button>
 				</div>
 			</div>
+			{Array.isArray(state.users) ? (
+				<div style={{ display: "flex", justifyContent: "center", flexGrow: 1, alignItems: "center" }}>
+					{state.users.map((user, index) => (
+						<div key={user.userId} style={{ display: "flex", flexDirection: "column" }}>
+							<Button style={{ height: "10rem", width: "10rem" }} onClick={() => dispatch(changeUser(user))}>
+								{user.userName}
+							</Button>
+							<Button backgroundOpacity="transparent" size="small" onClick={() => { }}>
+								<Icon size="small" title="closex">closex</Icon>
+							</Button>
+						</div>
+					))}
+				</div>
+			) : (
+				<p>{$L('Cannot retreive data!')}</p>
+			)}
+
 		</div>
 	);
 };

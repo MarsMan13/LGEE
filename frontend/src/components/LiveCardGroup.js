@@ -39,6 +39,7 @@ const LiveCardGroup = (props) => {
         itemRenderer={renderItem}
         key="native"
         direction='horizontal'
+        scrollMode='translate'
         horizontalScrollbar="visible"
         noScrollByWheel={true}
         // data={thumbnails}
