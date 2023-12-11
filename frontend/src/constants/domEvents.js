@@ -4,3 +4,4 @@ export const VISIBILITY_CHANGE = 'visibilitychange';
 export const WEBOS_HIHG_CONTRAST_CHANGE = 'webOSHighContrastChange';
 export const WEBOS_LOCALE_CHANGE = 'webOSLocaleChange';
 export const WEBOS_RELAUNCH = 'webOSRelaunch';
+export const VIRTUAL_KEYBOARD_CHANGE = 'keyboardStateChange';

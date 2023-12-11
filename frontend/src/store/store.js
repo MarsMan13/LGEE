@@ -11,10 +11,22 @@ let user = createSlice({
   }
 })
 
+let path = createSlice({
+  name: 'path',
+  initialState: {liveId: -1},
+  reducers: {
+    changePath(state, action){
+      state.liveId = action.payload;
+    }
+  }
+})
+
 export default configureStore({
   reducer: {
-    user: user.reducer
+    user: user.reducer,
+    path: path.reducer,
   }
 }) 
 
 export let { changeUser } = user.actions
+export let { changePath } = path.actions

@@ -1,45 +1,36 @@
 // components/LiveCard.js
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import ImageItem from '@enact/sandstone/ImageItem';
-// import { Link } from 'react-router-dom';
+import {changePath} from '../store/store';
+import { useDispatch} from 'react-redux';
 
-const LiveCard = ({ thumbnail }) => {
+const LiveCard = ({ liveInfo }) => {
   // thumbnail이 없는 경우를 처리
-  if (!thumbnail) {
-    return (
-      <div>
-        Raccoon
-      </div>
-    );
-  }
+  let dispatch = useDispatch();
 
-  const { id: id, title: title, thumbnail: thumbnailUrl } = thumbnail;
+  const { id: id, title: title, liveCard: liveCardUrl } = liveInfo;
 
-  const norefcheck = () => {
-    console.log("Raccoon")
-  }
+  const goLive = useCallback(()=>{
+    dispatch(changePath(liveInfo.id));
+  }, []);
 
   return (
-    // <Link to={`/live`} style={{ textDecoration: 'none' }}>
-    // {/* <Link to={`/live/${id}`} style={{ textDecoration: 'none' }}> */}
-    <div style={{ marginRight: '30px' }} onClick={norefcheck}>
+    <div style={{ marginRight: '30px' }} onClick={goLive}>
       <ImageItem
-        src={thumbnailUrl}
+        src={liveCardUrl}
         label={title}
         alt={title}
         style={{ width: '10.8rem', height: '19.2rem' }}
-        // style={{ width: '10rem', height: '15rem' }}
       />
     </div>
-    // </Link>
   );
 };
 
 LiveCard.propTypes = {
-  thumbnail: PropTypes.shape({
+  liveInfo: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    thumbnail: PropTypes.string.isRequired,
+    liveCard: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired
   }),
 };

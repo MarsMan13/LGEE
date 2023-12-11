@@ -27,7 +27,6 @@ const useHighContrastChangeHandler = setSkinVariants =>
 export const useBackHandler = () =>
 	useCallback(() => {
 		debugLog('BACK[I]', {});
-		closeApp();
 	}, []);
 
 export const useCloseHandler = () =>
@@ -47,7 +46,7 @@ export const useDocumentEvent = setSkinVariants => {
 		const events = {
 			[domEvents.VISIBILITY_CHANGE]: handleVisibilitychange,
 			[domEvents.WEBOS_HIHG_CONTRAST_CHANGE]: handleHighContrastChange,
-			[domEvents.WEBOS_LOCALE_CHANGE]: handleLocaleChange
+			[domEvents.WEBOS_LOCALE_CHANGE]: handleLocaleChange,
 		};
 
 		if (isTVBrowser()) {
