@@ -1,10 +1,11 @@
-import { useState } from 'react';
-import Home from '../views/Home';
-import Live from '../views/Live';
-import NotFound from '../views/NotFound';
+import { useState, useCallback } from 'react';
+import Main from '../views/Main';
+import Account from '../views/Account';
+import { Panels } from '@enact/sandstone/Panels';
 import { useBackHandler, useCloseHandler, useDocumentEvent } from './AppState';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { isDevServe } from '../libs/utils';
+import { useSelector } from "react-redux";
+import { ThemeDecorator } from '@enact/sandstone/ThemeDecorator';
 
 /* istanbul ignore next*/
 if (isDevServe()) {
@@ -18,23 +19,48 @@ if (isDevServe()) {
 	};
 }
 
-const App = props => {
+const App = (props) => {
+	// const init = () => new LS2Request().send(
+	// 	{
+	// 		service: 'luna://com.webos.service.sm',
+	// 		method: 'deviceid/getIDs',
+	// 		onSuccess: function (inResponse) {
+	// 			console.log('Result: ' + JSON.stringify(inResponse));
+
+	// 		},
+	// 		onFailure: function (inError) {
+	// 			console.log('Failed to get system ID information');
+	// 			console.log('[' + inError.errorCode + ']: ' + inError.errorText);
+	// 			// To-Do something
+	// 			return;
+	// 		},
+	// 	});
+	// useEffect(() => {
+	// 	init()
+	// }, []);
 	const [skinVariants, setSkinVariants] = useState({ highContrast: false });
 	const handleBack = useBackHandler();
 	const handleClose = useCloseHandler();
 	useDocumentEvent(setSkinVariants);
+	const user = useSelector((state) => { return state.user });
 
+	if (user.userId === -1) {
+		return (
+			<Panels {...props} skinVariants={skinVariants}>
+				<Account />
+			</Panels>
+		);
+	}
 	return (
-		<div className="App" style={{height: "100%"}}>
-			<BrowserRouter>
-				<Routes>
-					<Route path="/" element={<Home />}></Route>
-					<Route path="/live" element={<Live />}></Route>
-					<Route path="*" element={<NotFound />}></Route>
-				</Routes>
-			</BrowserRouter>
-		</div>
+		<Panels
+			{...props}
+			skinVariants={skinVariants}
+			onBack={handleBack}
+			onClose={handleClose}
+		>
+			<Main />
+		</Panels>
 	);
 };
 
-export default App;
+export default ThemeDecorator(App);
