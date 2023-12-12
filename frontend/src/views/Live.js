@@ -15,10 +15,6 @@ import HLSVideoPlayer from './HLSVideoPlayer';
 
 const Live = ({ id, onBack, onClose, ...rest }) => {
   let dispatch = useDispatch();
-  const products = [
-    { id: 1, name: "퍼슈즈", price: '12000', image: 'https://static-resource.mlb-korea.com/cdn-cgi/image/format=auto,width=828,height=828,quality=85/images/goods/thnail/m/20230913/3AMUPSF36-50CAD-110612674613891910.png' },
-    { id: 2, name: "퍼슈즈", price: '12000', image: 'https://static-resource.mlb-korea.com/cdn-cgi/image/format=auto,width=828,height=828,quality=85/images/goods/thnail/m/20230913/3AMUPSF36-50CAD-110612674613891910.png' },
-  ];
 
   useEffect(() => {
     return () => {
@@ -31,7 +27,7 @@ const Live = ({ id, onBack, onClose, ...rest }) => {
       <Panel {...rest}>
         <Header title="[슈펜] 겨울 필수템 퍼슈즈/패딩화/롱부츠 특가전" subtitle="LIVE: 86,103" />
         <div style={{ padding: "1rem" }}>
-          <HLSVideoPlayer id={id} src="https://cdn-vos-ppp-01.vos360.video/Content/HLS_HLSCLEAR/Live/channel(PPP-LL-2HLS)/index.m3u8" ></HLSVideoPlayer>
+          <HLSVideoPlayer id={id} src="http://3.36.10.238:8000/adidas-originals-national-backpack-sku_8702653.m3u8" ></HLSVideoPlayer>
         </div>
       </Panel>
     </Panels>
