@@ -17,7 +17,7 @@ const HomeScreen = () => {
                 <h3>{$L("실시간 인기 라이브")}</h3>
                 <LiveCardGroup id={3} direction='horizontal' scrollHeight='20rem' denyWheelScroll={true} dataSize={-1}/>
                 <h3>{$L("실시간 라이브")}</h3>
-                <LiveCardGroup id={4} direction='vertical' scrollHeight='60rem' denyWheelScroll={false} dataSize={-1}/>
+                <LiveCardGroup id={4} direction='horizontal' scrollHeight='20rem' denyWheelScroll={false} dataSize={-1}/>
             </div>
         </Scroller>
     );

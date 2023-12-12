@@ -60,7 +60,7 @@ const LiveCardGroup = (props) => {
         verticalScrollbar='hidden'
         noScrollByWheel={denyWheelScroll}
         // data={liveCards}
-        hoverToScroll={true}
+        hoverToScroll={false}
         spacing={0}
         scrollMode='native'
         // noAffordance={true}
