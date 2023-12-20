@@ -6,12 +6,10 @@
 |     |/file/:uuid          |
 |     |/file                |
 |     |/file/:uuid          |
-|-----|---------------------|
-|User |/userGroup           |
-|Group|/userGroup/:id       |
+|User Group|/userGroup           |
+|     |/userGroup/:id       |
 |     |/userGroup           |
 |     |/userGroup/:id       |
-|-----|---------------------|
 |User |/user                |
 |     |/user/find-password  |
 |     |/user/reset-password |
@@ -20,11 +18,9 @@
 |     |/user/email/:email   |
 |     |/user/auth-hash/:hash|
 |     |/user/:id            |
-|-----|---------------------|
 |Video|/video               |
 |     |/video/count         |
 |     |/video/stats         |
 |     |/video/:id           |
 |     |/video               |
 |     |/video/:id           |
-|-----|---------------------|
